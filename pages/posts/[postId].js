@@ -1,5 +1,6 @@
-import { Box, Container, Heading } from "@chakra-ui/layout";
 import React from "react";
+import { Box, Container, Heading } from "@chakra-ui/layout";
+import PostContent from "../../components/postContent";
 import { getPost } from "../../utils/axios/posts";
 
 export default function SinglePost({ post }) {
@@ -9,7 +10,7 @@ export default function SinglePost({ post }) {
         <Heading as="h1" mb="4">
           {post?.title.rendered}
         </Heading>
-        <Box dangerouslySetInnerHTML={{ __html: post?.content.rendered }} />
+        <PostContent content={post?.content.rendered} />
       </Container>
     </Box>
   );

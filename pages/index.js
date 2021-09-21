@@ -25,7 +25,14 @@ export default function Home({ posts }) {
             posts.map((post) => (
               <GridItem as="article" key={post.id}>
                 <LinkBox as="article">
-                  <Heading fontSize="lg" mb="2">
+                  <Heading
+                    fontSize="lg"
+                    mb="2"
+                    color="blue.500"
+                    _hover={{
+                      textDecoration: "underline",
+                    }}
+                  >
                     <NextLink href={`posts/${post.id}`} passHref>
                       <LinkOverlay colorScheme="blue">
                         {post?.title.rendered}
